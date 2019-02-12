@@ -142,6 +142,14 @@ func (a Asset) Add(other Asset) Asset {
 	return Asset{Amount: a.Amount + other.Amount, Symbol: a.Symbol}
 }
 
+func (a Asset) Div(other Asset) float64 {
+	if a.Symbol != other.Symbol {
+		panic("Add applies only to assets with the same symbol")
+	}
+
+	return float64(a.Amount) / float64(other.Amount)
+}
+
 func (a Asset) Sub(other Asset) Asset {
 	if a.Symbol != other.Symbol {
 		panic("Sub applies only to assets with the same symbol")
