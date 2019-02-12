@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"reflect"
+	"svn/abouteos/schedule/tab"
 
 	"github.com/eoscanada/eos-go/ecc"
 )
@@ -193,8 +194,8 @@ type GetTableByScopeRequest struct {
 }
 
 type GetTableByScopeResp struct {
-	More bool            `json:"more"`
-	Rows json.RawMessage `json:"rows"`
+	More string            `json:"more"`
+	Rows []tab.Itm `json:"rows"`
 }
 
 type GetTableRowsRequest struct {
